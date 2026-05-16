@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod-volume
+  namespace: lab-devops
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+
+    volumeMounts:
+    - mountPath: /cache
+      name: meu-volume
+
+  volumes:
+  - name: meu-volume
+    emptyDir: {}
